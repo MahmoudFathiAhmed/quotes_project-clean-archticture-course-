@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quotes/core/utils/app_colors.dart';
+import 'package:quotes/features/domain/entities/quote.dart';
 
 class QuoteContent extends StatelessWidget {
-  const QuoteContent({Key? key}) : super(key: key);
+  final Quote quote;
+  const QuoteContent({Key? key, required this.quote}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +18,14 @@ class QuoteContent extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'anything anything anything anything anything anything anything anything anything',
+            quote.content,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 15),
             child: Text(
-              'Bill Gates',
+              quote.author,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),

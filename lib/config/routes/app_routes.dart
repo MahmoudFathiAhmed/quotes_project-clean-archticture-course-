@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quotes/core/utils/app_strings.dart';
+
 import '../../features/presentation/screens/quote_screen.dart';
 
 class Routes{
@@ -10,7 +11,7 @@ class AppRoutes{
   static Route? onGenerateRoute(RouteSettings routeSettings){
     switch(routeSettings.name){
       case Routes.initialRoute: 
-        return MaterialPageRoute(builder: (context)=> const QuoteScreen());
+        return MaterialPageRoute(builder: (context)=>const QuoteScreen());
       default: return undefinedRoute();
     }
   }

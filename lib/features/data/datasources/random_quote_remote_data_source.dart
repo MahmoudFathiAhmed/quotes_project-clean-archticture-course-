@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 import 'package:quotes/core/api/end_point.dart';
-import 'package:quotes/core/error/exceptions.dart';
-import 'package:quotes/core/utils/app_strings.dart';
 import 'package:quotes/features/data/models/quote_model.dart';
-import 'package:http/http.dart' as http;
+
+import '../../../core/api/api_consumer.dart';
 
 
 abstract class RandomQuoteRemoteDataSource{
@@ -12,22 +9,14 @@ abstract class RandomQuoteRemoteDataSource{
 }
 
 class RandomQuoteRemoteDataSourceImpl implements RandomQuoteRemoteDataSource{
-  http.Client client;
-  RandomQuoteRemoteDataSourceImpl({required this.client});
+  ApiConsumer apiConsumer;
+  RandomQuoteRemoteDataSourceImpl({required this.apiConsumer});
   @override
   Future<QuoteModel> getRandomQuote() async{
-    final randomQuoteUrl = Uri.parse(EndPoints.randomQuote);
-    final response = await client.get(
-      randomQuoteUrl,
-      headers: {
-        AppStrings.contentType:AppStrings.applicationJson
-      }
+    final response = await apiConsumer.get(
+        EndPoints.randomQuote,
     );
-    if(response.statusCode == 200){
-      return QuoteModel.fromJson(json.decode(response.body));
-    }else{
-      throw ServerException();
-    }
+    return QuoteModel.fromJson(response);
   }
 
 }

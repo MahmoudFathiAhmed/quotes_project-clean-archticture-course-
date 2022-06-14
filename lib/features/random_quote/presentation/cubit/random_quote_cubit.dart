@@ -4,8 +4,9 @@ import 'package:equatable/equatable.dart';
 import 'package:quotes/core/error/failures.dart';
 import 'package:quotes/core/usecases/usecase.dart';
 import 'package:quotes/core/utils/app_strings.dart';
-import 'package:quotes/features/domain/entities/quote.dart';
 
+
+import '../../domain/entities/quote.dart';
 import '../../domain/usecases/get_random_quote.dart';
 
 part 'random_quote_state.dart';

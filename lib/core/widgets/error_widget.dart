@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quotes/config/locale/app_localizations.dart';
+import 'package:quotes/core/utils/app_strings.dart';
 import 'package:quotes/core/utils/media_query_values.dart';
 
 import '../utils/app_colors.dart';
@@ -20,15 +22,15 @@ class ErrorWidget extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.symmetric(vertical: 12),
-          child:const Text('Something went wrong',
-            style: TextStyle(
+          child: Text(AppLocalizations.of(context)!.translate(AppStrings.someThingWentWrong)!,
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.w700
             ),
           ),
         ),
-        Text('Please try again',
+        Text(AppLocalizations.of(context)!.translate(AppStrings.tryAgain)!,
           style: TextStyle(
             color: AppColors.hint,
             fontSize: 18,
@@ -48,8 +50,8 @@ class ErrorWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-            child: const Text('Reload Screen',
-            style: TextStyle(
+            child: Text(AppLocalizations.of(context)!.translate(AppStrings.reloadScreen)!,
+            style: const TextStyle(
                 color: Colors.white,
                 fontSize: 20,
               fontWeight: FontWeight.w700

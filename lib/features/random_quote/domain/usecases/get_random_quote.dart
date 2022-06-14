@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import '../../../core/usecases/usecase.dart';
-import '../../../features/domain/repositories/quote_repository.dart';
 
-import '../../../core/error/failures.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecase.dart';
 import '../entities/quote.dart';
+import '../repositories/quote_repository.dart';
 
 class GetRandomQuote implements UseCase<Quote, NoParams>{
   final QuoteRepository quoteRepository;

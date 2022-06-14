@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quotes/core/utils/app_colors.dart';
-import 'package:quotes/features/domain/entities/quote.dart';
+
+import '../../domain/entities/quote.dart';
 
 class QuoteContent extends StatelessWidget {
   final Quote quote;

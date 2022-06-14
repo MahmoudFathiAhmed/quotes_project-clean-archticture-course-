@@ -1,7 +1,8 @@
 import 'package:quotes/core/api/end_point.dart';
-import 'package:quotes/features/data/models/quote_model.dart';
 
-import '../../../core/api/api_consumer.dart';
+import '../../../../core/api/api_consumer.dart';
+import '../models/quote_model.dart';
+
 
 
 abstract class RandomQuoteRemoteDataSource{

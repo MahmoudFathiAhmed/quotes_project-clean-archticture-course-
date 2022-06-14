@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.5
   flutter_bloc: ^8.0.1
   equatable: ^2.0.3
@@ -35,6 +37,8 @@ flutter:
 
   assets:
     - assets/images/quote.png
+    - lang/ar.json
+    - lang/en.json
   #   - images/a_dot_ham.jpeg
 
 
